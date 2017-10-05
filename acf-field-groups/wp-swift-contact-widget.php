@@ -208,7 +208,7 @@ acf_add_local_field_group(array (
 			'display' => 'seamless',
 			'layout' => 'block',
 			'prefix_label' => 0,
-			'prefix_name' => 1,
+			'prefix_name' => 0,
 		),
 		array (
 			'key' => 'field_59a71b5715cbf',

@@ -46,14 +46,17 @@ if( get_field('email', 'option') ) {
 }
 if( get_field('opening_hours', 'option') ) {
 	$opening_hours = get_field('opening_hours', 'option');
-	// echo "opening_hours<pre>"; var_dump($opening_hours); echo "</pre>";
 }
+
 $social_media_links = false;
-if (function_exists('get_social_media')) {
-	$social_media_links = get_social_media();
+if( get_field('social_media_settings', $widget_id) ) {
+	$social_media_settings = get_field('social_media_settings', $widget_id);
+	if ($social_media_settings !== 'none' && function_exists('get_social_media')) {
+		$social_media_links = get_social_media();
+	}	
 }
 ?>
-<article class="column column-block widget widget_nav_menu <?php echo $widget_id; ?>">
+<section class="cell widget <?php echo $widget_id; ?>">
 <div class="footer-contact-widget">
 
 	<?php if ( get_field('use_site_title', $widget_id) ) : ?>
@@ -84,7 +87,7 @@ if (function_exists('get_social_media')) {
 					?><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span><?php 
 				endif;
 				if (isset($phone_display_options['label'])): 
-					?><span class="key phone">Telephone</span><?php 
+					?><span class="key phone">Tel</span><?php 
 				endif;
 			 ?><span class="value phone"><a href="tel:<?php echo $phone; ?>"><?php echo $phone_readable; ?></a></span>
 		</div><!-- @end .contact-method -->
@@ -125,7 +128,7 @@ if (function_exists('get_social_media')) {
 				if (isset($opening_hours_display_options['label'])): 
 					?><span class="key opening-hours">Opening Hours</span><?php 
 				endif;
-			 ?><span class="value opening-hours"> <?php echo $opening_hours; ?></span>
+			 ?><span class="value opening-hours"><?php echo $opening_hours; ?></span>
 		</div><!-- @end .contact-method -->
 	<?php endif ?>
 
@@ -139,7 +142,6 @@ if (function_exists('get_social_media')) {
 
 	<?php endif; ?>	
 
-
 </div>
-</article>
+</section>
 

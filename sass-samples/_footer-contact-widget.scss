@@ -1,0 +1,15 @@
+div.footer-contact-widget {
+	div.contact-method {
+		margin-bottom: 0.5rem;
+		span.key {
+			color: #D8D8D8;
+			font-weight: 600;
+		}
+		span.key:after {
+			content: ": ";
+		}
+	}	
+	div.contact-method.phone, div.contact-method.mobile {
+		margin-bottom: 0;		
+	}
+}

@@ -1,7 +1,7 @@
 <?php
 /*
-  Plugin Name:       WP Swift: Contact Widget
-  Description:       Placeholder widget for contact details
+  Plugin Name:       WP Swift: Footer Contact Widget
+  Description:       Placeholder widget for contact details in the footer
   Version:           1.0.0
   Author:            Gary Swift
   License:           GPL-2.0+
@@ -19,7 +19,7 @@ class WP_Swift_Contact_Widget extends WP_Widget {
      
         parent::__construct(
             'wp_swift_Contact_widget',
-            __( 'WP Swift: Contact Widget', 'wp-swift-contact-widget' ),
+            __( 'WP Swift: Footer Contact Widget', 'wp-swift-contact-widget' ),
             array(
                 'classname'   => 'wp_swift_Contact_widget',
                 'description' => __( 'Placeholder widget for contact details.', 'wp-swift-contact-widget' )
