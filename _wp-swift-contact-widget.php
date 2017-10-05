@@ -3,69 +3,70 @@ $widget_id = "widget_" . $args["widget_id"];
 $additional_settings = false;
 $phone = false;
 $mobile = false;
-
-if( get_field('additional_settings', $widget_id) ) {
-	$additional_settings = get_field('additional_settings', $widget_id);
-	$additional_settings = array_flip($additional_settings);
-}
-if ( get_field('address_display_options', $widget_id))  {
-	$address_display_options = get_field('address_display_options', $widget_id);
-	$address_display_options = array_flip($address_display_options);	
-}
-if ( get_field('phone_display_options', $widget_id))  {
-	$phone_display_options = get_field('phone_display_options', $widget_id);
-	$phone_display_options = array_flip($phone_display_options);	
-}
-if ( get_field('mobile_display_options', $widget_id))  {
-	$mobile_display_options = get_field('mobile_display_options', $widget_id);
-	$mobile_display_options = array_flip($mobile_display_options);	
-}
-if ( get_field('email_display_options', $widget_id))  {
-	$email_display_options = get_field('email_display_options', $widget_id);
-	$email_display_options = array_flip($email_display_options);	
-}
-if ( get_field('opening_hours_display_options', $widget_id))  {
-	$opening_hours_display_options = get_field('opening_hours_display_options', $widget_id);
-	$opening_hours_display_options = array_flip($opening_hours_display_options);	
-}
-if ( get_field('address', 'option') ) {
-	$address = get_field('address', 'option');
-	if (isset($additional_settings['remove_address_break'])) {
-		$address = str_replace('<br />', ' ', $address);
-	}
-}
-if ( function_exists('get_phone') )  {
-    $phone_readable = get_phone('office_phone');
-    $phone = get_phone('office_phone', true);
-    $mobile_readable = get_phone('mobile');
-    $mobile = get_phone('mobile', true);
-}
-if( get_field('email', 'option') ) {
-    $email = get_field('email', 'option');
-    $email_text = str_replace('@', '<span class="ampersand">@</span>', $email);
-}
-if( get_field('opening_hours', 'option') ) {
-	$opening_hours = get_field('opening_hours', 'option');
-}
-
+$widget_title = "Contact Details";
 $social_media_links = false;
-if( get_field('social_media_settings', $widget_id) ) {
-	$social_media_settings = get_field('social_media_settings', $widget_id);
-	if ($social_media_settings !== 'none' && function_exists('get_social_media')) {
-		$social_media_links = get_social_media();
-	}	
+
+if (function_exists("get_field")) {
+	if( get_field('additional_settings', $widget_id) ) {
+		$additional_settings = get_field('additional_settings', $widget_id);
+		$additional_settings = array_flip($additional_settings);
+	}
+	if ( get_field('address_display_options', $widget_id))  {
+		$address_display_options = get_field('address_display_options', $widget_id);
+		$address_display_options = array_flip($address_display_options);	
+	}
+	if ( get_field('phone_display_options', $widget_id))  {
+		$phone_display_options = get_field('phone_display_options', $widget_id);
+		$phone_display_options = array_flip($phone_display_options);	
+	}
+	if ( get_field('mobile_display_options', $widget_id))  {
+		$mobile_display_options = get_field('mobile_display_options', $widget_id);
+		$mobile_display_options = array_flip($mobile_display_options);	
+	}
+	if ( get_field('email_display_options', $widget_id))  {
+		$email_display_options = get_field('email_display_options', $widget_id);
+		$email_display_options = array_flip($email_display_options);	
+	}
+	if ( get_field('opening_hours_display_options', $widget_id))  {
+		$opening_hours_display_options = get_field('opening_hours_display_options', $widget_id);
+		$opening_hours_display_options = array_flip($opening_hours_display_options);	
+	}
+	if ( get_field('address', 'option') ) {
+		$address = get_field('address', 'option');
+		if (isset($additional_settings['remove_address_break'])) {
+			$address = str_replace('<br />', ' ', $address);
+		}
+	}
+	if ( function_exists('get_phone') )  {
+	    $phone_readable = get_phone('office_phone');
+	    $phone = get_phone('office_phone', true);
+	    $mobile_readable = get_phone('mobile');
+	    $mobile = get_phone('mobile', true);
+	}
+	if( get_field('email', 'option') ) {
+	    $email = get_field('email', 'option');
+	    $email_text = str_replace('@', '<span class="ampersand">@</span>', $email);
+	}
+	if( get_field('opening_hours', 'option') ) {
+		$opening_hours = get_field('opening_hours', 'option');
+	}
+	if( get_field('social_media_settings', $widget_id) ) {
+		$social_media_settings = get_field('social_media_settings', $widget_id);
+		if ($social_media_settings !== 'none' && function_exists('get_social_media')) {
+			$social_media_links = get_social_media();
+		}	
+	}
+	if ( get_field('use_site_title', $widget_id)) {
+		$widget_title = bloginfo( 'name' );
+	} elseif ( get_field('widget_title', $widget_id) ) {
+		$widget_title = get_field('widget_title', $widget_id);
+	}
 }
 ?>
 <section class="cell widget <?php echo $widget_id; ?>">
 <div class="footer-contact-widget">
 
-	<?php if ( get_field('use_site_title', $widget_id) ) : ?>
-		<h6><?php echo bloginfo( 'name' );; ?></h6>
-	<?php elseif ( get_field('widget_title', $widget_id) ) : ?>
-		<h6><?php echo get_field('widget_title', $widget_id); ?></h6>
-	<?php else: ?>
-		<h6>Contact Details</h6><span class="ampersand">@</span>
-	<?php endif; ?>
+	<h6><?php echo $widget_title; ?></h6>
 
 	<?php if (isset($address_display_options['show']) && isset($address)): ?>
 		<div class="contact-method address">
@@ -144,4 +145,3 @@ if( get_field('social_media_settings', $widget_id) ) {
 
 </div>
 </section>
-
