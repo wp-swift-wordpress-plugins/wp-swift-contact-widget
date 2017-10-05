@@ -57,7 +57,7 @@ if (function_exists("get_field")) {
 		}	
 	}
 	if ( get_field('use_site_title', $widget_id)) {
-		$widget_title = bloginfo( 'name' );
+		$widget_title = get_bloginfo( 'name' );
 	} elseif ( get_field('widget_title', $widget_id) ) {
 		$widget_title = get_field('widget_title', $widget_id);
 	}
