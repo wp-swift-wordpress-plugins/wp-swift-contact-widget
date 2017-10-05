@@ -6,16 +6,12 @@
   Author:            Gary Swift
   License:           GPL-2.0+
   Text Domain:       wp-swift-contact-widget
-
-
-  5) 
-  Replace the sample ACf field group included in _acf-field-group.php 
-  or remove the include and create a new field group using the ACF API.
-
 */
 
-// Inclide the ACF group
-// include "_acf-field-group.php";
+// Inclide the ACF groups
+require_once plugin_dir_path( __FILE__ ) . 'acf-field-groups/wp-swift-contact-widget-contact-clone-field.php';
+require_once plugin_dir_path( __FILE__ ) . 'acf-field-groups/wp-swift-contact-widget-social-clone.php';
+require_once plugin_dir_path( __FILE__ ) . 'acf-field-groups/wp-swift-contact-widget.php';
 
 class WP_Swift_Contact_Widget extends WP_Widget {
  
