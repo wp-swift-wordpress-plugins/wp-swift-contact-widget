@@ -2,14 +2,15 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
-	'key' => 'group_590322e1c0afb',
-	'title' => 'ACF Starter Widget',
+	'key' => 'group_59a03db60817c',
+	'title' => 'WP Swift: Contact Widget - Contact Clone Field',
 	'fields' => array (
 		array (
-			'key' => 'field_590322f343379',
-			'label' => 'Title',
-			'name' => 'title',
-			'type' => 'text',
+			'key' => 'field_59a044b8d0f85',
+			'label' => 'Options',
+			'name' => 'display_options',
+			'type' => 'checkbox',
+			'value' => NULL,
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -18,19 +19,26 @@ acf_add_local_field_group(array (
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
+			'choices' => array (
+				'show' => 'Show',
+				'label' => 'Label',
+				'icon' => 'Icon',
+			),
+			'allow_custom' => 0,
+			'save_custom' => 0,
+			'default_value' => array (
+			),
+			'layout' => 'horizontal',
+			'toggle' => 0,
+			'return_format' => 'value',
 		),
 	),
 	'location' => array (
 		array (
 			array (
-				'param' => 'widget',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'wp_swift_acf_starter_widget',
+				'value' => 'post',
 			),
 		),
 	),
@@ -40,7 +48,7 @@ acf_add_local_field_group(array (
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
-	'active' => 1,
+	'active' => 0,
 	'description' => '',
 ));
 

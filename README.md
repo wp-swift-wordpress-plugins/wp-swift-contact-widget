@@ -1,4 +1,4 @@
-# WP Swift: ACF Starter Widget
+# WP Swift: Footer Contact Widget
 
 * Plugin Name:       WP Swift: Contact Widget
 * Description:       Placeholder widget for contact details
@@ -6,6 +6,8 @@
 * Author:            Gary Swift
 * License:           GPL-2.0+
 * Text Domain:       wp-swift-contact-widget
+
+This widget is an add-on for the contact details sections of the (wp-swift-admin-menu)[https://github.com/wp-swift-wordpress-plugins/wp-swift-admin-menu] plugin.
 
 ## Licence
 This project is licensed under the MIT license.

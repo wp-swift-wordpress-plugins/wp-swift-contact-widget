@@ -8,6 +8,7 @@
                 "label": "Widget Title",
                 "name": "widget_title",
                 "type": "text",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": [
@@ -35,6 +36,7 @@
                 "label": "Use Site Title",
                 "name": "use_site_title",
                 "type": "true_false",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -54,6 +56,7 @@
                 "label": "Address",
                 "name": "address",
                 "type": "clone",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -75,6 +78,7 @@
                 "label": "Phone",
                 "name": "phone",
                 "type": "clone",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -96,6 +100,7 @@
                 "label": "Mobile",
                 "name": "mobile",
                 "type": "clone",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -117,6 +122,7 @@
                 "label": "Email",
                 "name": "email",
                 "type": "clone",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -138,6 +144,7 @@
                 "label": "Opening Hours",
                 "name": "opening_hours",
                 "type": "clone",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -176,6 +183,7 @@
                 "label": "Social Media",
                 "name": "social_media",
                 "type": "clone",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": [
@@ -205,6 +213,7 @@
                 "label": "Additional Settings",
                 "name": "additional_settings",
                 "type": "checkbox",
+                "value": null,
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -240,103 +249,6 @@
         "instruction_placement": "label",
         "hide_on_screen": "",
         "active": 1,
-        "description": ""
-    },
-    {
-        "key": "group_59a03db60817c",
-        "title": "WP Swift: Contact Widget - Contact Clone Field",
-        "fields": [
-            {
-                "key": "field_59a044b8d0f85",
-                "label": "Options",
-                "name": "display_options",
-                "type": "checkbox",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "show": "Show",
-                    "label": "Label",
-                    "icon": "Icon"
-                },
-                "allow_custom": 0,
-                "save_custom": 0,
-                "default_value": [],
-                "layout": "horizontal",
-                "toggle": 0,
-                "return_format": "value"
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "post"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": 0,
-        "description": ""
-    },
-    {
-        "key": "group_59a042266fd7b",
-        "title": "WP Swift: Contact Widget - Social Clone",
-        "fields": [
-            {
-                "key": "field_59a0425ca4516",
-                "label": "Social Media Settings",
-                "name": "social_media_settings",
-                "type": "radio",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "none": "None",
-                    "icon": "Icon",
-                    "text": "Text",
-                    "icons_text": "Both"
-                },
-                "allow_null": 0,
-                "other_choice": 0,
-                "save_other_choice": 0,
-                "default_value": "none",
-                "layout": "horizontal",
-                "return_format": "value"
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "post"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": 0,
         "description": ""
     }
 ]
