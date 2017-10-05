@@ -69,9 +69,9 @@ class WP_Swift_Contact_Widget extends WP_Widget {
       */
     public function form( $instance ) { 
       //The ACF API will handle this
-      ?><p>
+      ?><!-- <p>
         All settings for this are set in the <b>BrightLight</b> menu.
-      </p><?php
+      </p> --><?php
     }
 }
  
